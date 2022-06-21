@@ -1,0 +1,51 @@
+{% extends 'master.html' %}
+{% include 'header.html' %}
+
+{% block title %} Crear Contacto {% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<div>
+		<div class="col-md-12 text-center"><h1>Lista de Contactos</h1></div>
+	</div>
+
+	<table class="table table-hover table-striped table-bordered" id="example">
+		<thead style="background-color: orange; color: darkblue;">
+			<th>Numero</th>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Apellidos</th>
+			<th>Correo electrónico</th>
+			<th>Genero</th>
+			<th>Pasatiempos</th>
+			<th>Pais</th>
+			<th>Opción</th>
+		</thead>
+		<tbody>
+			{% for contact in contacts %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>{{ contact.id }}</td>
+				<td>{{ contact.nombre }}</td>
+				<td>{{ contact.apellidos }}</td>
+				<td>{{ contact.correo_e }}</td>
+				<td>{{ contact.genero }}</td>
+				<td>{{ contact.pasatiempos }}</td>
+				<td>{{ contact.pais }}</td>
+				<td>
+					<span style="font-size: 24px; color: green;">
+						<a href="/{{ contact.id }}/edit"> <i class="fas fa-edit"></i> </a>
+					</span>
+
+					<span style="font-size: 24px; color: red;">
+						<a href="/{{ contact.id }}/delete"> <i class="fas fa-trash-alt"></i> </a>
+					</span>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'master.html' %}
+{% include 'header.html' %}
+
+{% block title %} Crear Contacto {% endblock %}
+
+{% block body %}
+
+<div class="container">
+	<form method="post" action="">
+		<table class="table">
+			<tr>
+				<td>Nombre</td>
+				<td><input type="text" name="nombre" class="form-control"></td>
+			</tr>
+
+			<tr>
+				<td>Apellidos</td>
+				<td><input type="text" name="apellidos" class="form-control"></td>
+			</tr>
+
+			<tr>
+				<td>Correo Electrónico</td>
+				<td><input type="email" name="correo_e" class="form-control"></td>
+			</tr>
+
+			<tr>
+				<td>Contraseña</td>
+				<td><input type="password" name="contrasena" class="form-control"></td>
+			</tr>
+
+			<tr>
+				<td>Genero</td>
+				<td>
+					Femenino:<input type="radio" name="genero" value="Femenino">
+					Masculino:<input type="radio" name="genero" value="Masculino">
+				</td>
+			</tr>
+
+			<tr>
+				<td>Pasatiempos</td>
+				<td>
+					Atletismo:<input type="checkbox" name="pasatiempos" value="Atletismo">
+					Lectura:<input type="checkbox" name="pasatiempos" value="Lectura">
+					Video Juegos:<input type="checkbox" name="pasatiempos" value="Videojuegos">
+				</td>
+			</tr>
+
+			<tr>
+				<td>Pais</td>
+				<td>
+					<select name="pais" class="form-control">
+						<option value="Mexico">Mexico</option>
+						<option value="Colombia">Colombia</option>
+						<option value="Ecuador">Ecuador</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<input type="submit" name="submit" value="Crear Contacto" class="btn btn-success">
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+{% endblock %}
